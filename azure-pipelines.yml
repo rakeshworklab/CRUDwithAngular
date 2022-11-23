@@ -28,9 +28,9 @@ resources:
 #- script: dir $(Build.SourcesDirectory)
 
 parameters:
-  - name: devops-project-samples
-    displayName: devops_project_samples
-    type: string
+  #- name: devops-project-samples
+    #displayName: devops_project_samples
+    #type: string
   - name: CRUDwithAngular
     displayName: CRUDwithAngular
     type: string
