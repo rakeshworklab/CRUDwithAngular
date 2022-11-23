@@ -15,11 +15,11 @@ resources:
   - repository: devops-project-samples
     type: github
     endpoint: rakeshworklab
-    name: MyGitHubOrgOrUser/devops-project-samples
+    name: rakeshworklab/devops-project-samples
   - repository: CRUDwithAngular
     type: github
     endpoint: rakeshworklab
-    name: MyGitHubOrgOrUser/CRUDwithAngular
+    name: rakeshworklab/CRUDwithAngular
 
 steps:
 - checkout: devops-project-samples
