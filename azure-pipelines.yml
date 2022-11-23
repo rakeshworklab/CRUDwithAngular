@@ -42,4 +42,4 @@ stages:
   jobs:
   - job: Checkout
     steps:
-    - checkout: (git://eq('${{ parameters.CRUDwithAngular }}') "eq(${{ parameters.devops-project-samples}}')")
+    - checkout: (git://eq('${{ parameters.CRUDwithAngular }}') "eq(${{parameters.devops-project-samples}})")
