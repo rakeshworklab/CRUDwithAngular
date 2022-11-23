@@ -27,13 +27,21 @@ resources:
 #- checkout: self
 #- script: dir $(Build.SourcesDirectory)
 
+#parameters:
+  #- name: devops_project_samples
+    #displayName: devops_project_samples
+    #type: string
+  #- name: CRUDwithAngular
+    #displayName: CRUDwithAngular
+    #type: string
+
 parameters:
-  - name: devops_project_samples
-    displayName: devops_project_samples
+  - name: selectrepo
+    displayName: selectrepo
     type: string
-  - name: CRUDwithAngular
-    displayName: CRUDwithAngular
-    type: string
+    values:
+      - CRUDwithAngular
+      - devops_project_samples
 
 stages:
 - stage: reposelection
@@ -41,5 +49,5 @@ stages:
   jobs:
   - job: Checkout
     steps:
-    - checkout: ('${{ parameters.CRUDwithAngular }}' "${{ parameters.devops_project_samples }}")
+    - checkout: ${{parameters.selectrepo}}
     - script: dir $(Build.SourcesDirectory)
