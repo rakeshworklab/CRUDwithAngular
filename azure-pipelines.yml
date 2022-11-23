@@ -5,6 +5,7 @@
 
 trigger:
 - master
+- azure-pipelines
 
 pool:
   vmImage: ubuntu-latest
@@ -26,3 +27,11 @@ steps:
 - checkout: self
 
 - script: dir $(Build.SourcesDirectory)
+
+parameters:
+  - name: devops-project-samples
+    displayName: devops-project-samples
+    type: string
+  - name: CRUDwithAngular
+    displayName: CRUDwithAngular
+    type: string
