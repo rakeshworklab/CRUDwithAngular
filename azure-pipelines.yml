@@ -13,10 +13,10 @@ pool:
 
 resources:
   repositories:
-  - repository: devops-project-samples
+  - repository: devops_project_samples
     type: github
     endpoint: rakeshworklab
-    name: rakeshworklab/devops-project-samples
+    name: rakeshworklab/devops_project_samples
   - repository: CRUDwithAngular
     type: github
     endpoint: rakeshworklab
@@ -28,9 +28,9 @@ resources:
 #- script: dir $(Build.SourcesDirectory)
 
 parameters:
-  #- name: devops-project-samples
-    #displayName: devops_project_samples
-    #type: string
+  - name: devops-project-samples
+    displayName: devops_project_samples
+    type: string
   - name: CRUDwithAngular
     displayName: CRUDwithAngular
     type: string
@@ -41,4 +41,5 @@ stages:
   jobs:
   - job: Checkout
     steps:
-    - checkout: '${{ parameters.CRUDwithAngular }}' #"eq(${{parameters.devops_project_samples}})")
+    - checkout: ('${{ parameters.CRUDwithAngular }}' "${{ parameters.devops_project_samples }}")
+    - script: dir $(Build.SourcesDirectory)
