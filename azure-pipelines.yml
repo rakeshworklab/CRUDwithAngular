@@ -22,9 +22,9 @@ resources:
     endpoint: rakeshworklab
     name: rakeshworklab/CRUDwithAngular
 
-/*steps:
-- checkout: devops-project-samples
-- checkout: self*/
+#steps:
+#- checkout: devops-project-samples
+#- checkout: self
 
 - script: dir $(Build.SourcesDirectory)
 
