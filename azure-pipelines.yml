@@ -25,7 +25,7 @@ resources:
 #steps:
 #- checkout: devops-project-samples
 #- checkout: self
-- script: dir $(Build.SourcesDirectory)
+#- script: dir $(Build.SourcesDirectory)
 
 parameters:
   - name: devops-project-samples
