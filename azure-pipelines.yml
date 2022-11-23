@@ -30,7 +30,7 @@ steps:
 
 parameters:
   - name: devops-project-samples
-    displayName: devops-project-samples
+    displayName: devops_project_samples
     type: string
   - name: CRUDwithAngular
     displayName: CRUDwithAngular
@@ -42,4 +42,4 @@ stages:
   jobs:
   - job: Checkout
     steps:
-    - checkout: (git://eq('${{ parameters.CRUDwithAngular }}') "eq(${{parameters.devops-project-samples}})")
+    - checkout: (git://eq('${{ parameters.CRUDwithAngular }}') "eq(${{parameters.devops_project_samples}})")
