@@ -15,14 +15,14 @@ resources:
   - repository: devops-project-samples
     type: github
     endpoint: rakeshworklab
-    name: MyGitHubOrgOrUser/MyGitHubRepo1
+    name: MyGitHubOrgOrUser/devops-project-samples
   - repository: CRUDwithAngular
     type: github
     endpoint: rakeshworklab
-    name: MyGitHubOrgOrUser/MyGitHubRepo2
+    name: MyGitHubOrgOrUser/CRUDwithAngular
 
 steps:
-- checkout: MyGitHubRepo1
-- checkout: MyBitbucketRepo2
+- checkout: devops-project-samples
+- checkout: self
 
 - script: dir $(Build.SourcesDirectory)
