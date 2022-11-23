@@ -35,3 +35,11 @@ parameters:
   - name: CRUDwithAngular
     displayName: CRUDwithAngular
     type: string
+
+stages:
+- stage: reposelection
+  displayName: selectrepo_Checkout
+  jobs:
+  - job: Checkout
+    steps:
+    - checkout: git://${{ parameters.CRUDwithAngular }}${{ parameters.devops-project-samples }}
