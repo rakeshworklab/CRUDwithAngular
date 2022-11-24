@@ -50,13 +50,8 @@ stages:
   - job: Checkout
     steps:
     - checkout: ${{parameters.selectrepo}}
-    - script: dir $(Build.SourcesDirectory)
-    
-    - task: PowerShell@2
-      inputs:
-       targetType: filePath
-       #filePath: $(System.DefaultWorkingDirectory)\powershell.ps1
-       workingDirectory: $(Build.SourcesDirectory)/powershell.ps1
+    #- script: dir $(Build.SourcesDirectory)
+
 - stage: powershell
   displayName: powershellscript
   jobs:
@@ -69,4 +64,7 @@ stages:
              script: |
                   # Write your PowerShell commands here.
       
-                  Write-Host "Hello World"
+                  Write-Host "1st script success"
+         - task: PowerShell@2
+           inputs:
+             filePath: 'https://github.com/rakeshworklab/CRUDwithAngular/blob/azure-pipelines/powershell.ps1'
