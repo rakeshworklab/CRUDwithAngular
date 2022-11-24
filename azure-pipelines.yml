@@ -52,6 +52,11 @@ stages:
     - checkout: ${{parameters.selectrepo}}
     - script: dir $(Build.SourcesDirectory)
 - stage: powershell
+  displayName: powershellscript
+  jobs:
+    -  job: executepowershell
+       steps:
+         - powershell: 
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
