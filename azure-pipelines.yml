@@ -51,18 +51,10 @@ stages:
     steps:
     - checkout: ${{parameters.selectrepo}}
     - script: dir $(Build.SourcesDirectory)
+    
     - task: PowerShell@2
       inputs:
-       targetType: 'inline'
-       script: |
-            # Write your PowerShell commands here.
-      
-            Write-Host " rakesh welcomes you
-                        $importPath = "powershell"
-                        $pattern = "rakesh(.*?)you"
-                        $string = Get-Content $importPath
-                        $result = [regex]::match($string, $pattern).Groups[1].Value
-                        $result"
+       filePath: 'powershell.ps1'
 - stage: powershell
   displayName: powershellscript
   jobs:
